@@ -6,7 +6,7 @@
 /*   By: arakotom <arakotom@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 13:40:34 by arakotom          #+#    #+#             */
-/*   Updated: 2024/08/02 16:51:01 by arakotom         ###   ########.fr       */
+/*   Updated: 2024/08/03 01:16:35 by arakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ int	key_move_handler(int keycode, t_game *game)
 {
 	if (keycode == XK_Escape)
 		exit_game(game);
-	else if (keycode == XK_Z || keycode == XK_z || keycode == XK_Up)
+	else if (keycode == XK_W || keycode == XK_w)
 		move_player(game, UP);
-	else if (keycode == XK_S || keycode == XK_s || keycode == XK_Down)
+	else if (keycode == XK_S || keycode == XK_s)
 		move_player(game, DOWN);
-	else if (keycode == XK_Q || keycode == XK_q || keycode == XK_Left)
+	else if (keycode == XK_A || keycode == XK_a)
 		move_player(game, LEFT);
-	else if (keycode == XK_D || keycode == XK_d || keycode == XK_Right)
+	else if (keycode == XK_D || keycode == XK_d)
 		move_player(game, RIGHT);
 	return (0);
 }
