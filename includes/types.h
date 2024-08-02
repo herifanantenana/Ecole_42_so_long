@@ -6,7 +6,7 @@
 /*   By: arakotom <arakotom@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 22:39:52 by arakotom          #+#    #+#             */
-/*   Updated: 2024/08/02 12:24:31 by arakotom         ###   ########.fr       */
+/*   Updated: 2024/08/02 13:54:17 by arakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,14 @@ typedef enum e_bool
 	FALSE = 0,
 	TRUE = 1,
 }					t_bool;
+
+typedef enum e_direction
+{
+	UP = 0,
+	DOWN = 1,
+	LEFT = 2,
+	RIGHT = 3,
+}					t_direction;
 
 typedef struct s_coord
 {
@@ -72,8 +80,8 @@ typedef struct s_assets
 	void			*ground;
 	void			*collect;
 	t_wall_img		wall;
-	t_player_img	player;
 	t_exit_img		exit;
+	t_player_img	player;
 }					t_assets;
 
 typedef struct s_game
@@ -85,6 +93,7 @@ typedef struct s_game
 	int				ratio;
 	t_map			map;
 	t_assets		assets;
+	t_direction		player_direction;
 }					t_game;
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: arakotom <arakotom@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 15:49:35 by arakotom          #+#    #+#             */
-/*   Updated: 2024/08/02 12:21:10 by arakotom         ###   ########.fr       */
+/*   Updated: 2024/08/02 13:57:19 by arakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,22 @@ void		find_way(char **map, t_map_data *map_data, int player_x,
 				int player_y);
 void		check_map_validation(const char *path);
 void		*set_img_mlx(t_game *game, char *path);
+void		put_img_mlx(t_game *game, void *img, t_coord c_map);
 t_assets	init_assets_16px(t_game *game);
 t_assets	init_assets_24px(t_game *game);
 t_assets	init_assets_32px(t_game *game);
 t_assets	init_assets_48px(t_game *game);
 t_assets	init_assets_64px(t_game *game);
 t_game		game_init(char **map);
-
+void		draw_wall(t_game *game, t_wall_img wall, t_coord c_map);
+void		draw_ground(t_game *game, void *ground, t_coord c_map);
+void		draw_collect(t_game *game, void *collect, t_coord c_map);
+void		draw_exit(t_game *game, t_exit_img exit, t_coord c_map);
+void		draw_player(t_game *game, t_player_img player, t_direction dir,
+				t_coord c_map);
+void		draw_player_on_exit(t_game *game, t_player_img player,
+				t_direction dir, t_coord c_map);
+void		draw_game_map(t_game *game);
+int			key_move_handler(int keycode, t_game *game);
+void		exit_game(t_game *game);
 #endif

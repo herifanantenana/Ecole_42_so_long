@@ -6,7 +6,7 @@
 /*   By: arakotom <arakotom@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 06:00:06 by arakotom          #+#    #+#             */
-/*   Updated: 2024/08/02 12:19:26 by arakotom         ###   ########.fr       */
+/*   Updated: 2024/08/02 13:19:43 by arakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ static void	init_game_map(t_game *game, char **map)
 	map_game.player = player;
 	map_game.exit = exit;
 	game->map = map_game;
+	game->player_direction = DOWN;
 }
 static void	init_game_ratio(t_game *game, t_map_data map_data)
 {
