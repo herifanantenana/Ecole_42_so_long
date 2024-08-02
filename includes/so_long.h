@@ -6,7 +6,7 @@
 /*   By: arakotom <arakotom@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 15:49:35 by arakotom          #+#    #+#             */
-/*   Updated: 2024/08/02 16:39:29 by arakotom         ###   ########.fr       */
+/*   Updated: 2024/08/02 16:49:38 by arakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ void		draw_player_on_exit(t_game *game, t_player_img player,
 				t_direction dir, t_coord c_map);
 void		set_coord_x_y(t_coord *coord, int x, int y);
 void		draw_game_map(t_game *game);
+int			key_event_handler(int keycode, void *params);
 int			key_move_handler(int keycode, t_game *game);
 void		reset_prev_img(t_game *game, t_coord c_old);
 void		set_next_img(t_game *game, t_coord c_new, t_direction dir);

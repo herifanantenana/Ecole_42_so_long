@@ -1,16 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   key_move_handler.c                                 :+:      :+:    :+:   */
+/*   key_handler.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arakotom <arakotom@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 13:40:34 by arakotom          #+#    #+#             */
-/*   Updated: 2024/08/02 16:39:00 by arakotom         ###   ########.fr       */
+/*   Updated: 2024/08/02 16:51:01 by arakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
+
+int	key_event_handler(int keycode, void *params)
+{
+	(void)keycode;
+	(void)params;
+	return (0);
+}
 
 int	key_move_handler(int keycode, t_game *game)
 {
