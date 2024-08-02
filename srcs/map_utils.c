@@ -12,7 +12,7 @@
 
 #include "../includes/so_long.h"
 
-void init_map_data(t_map_data *map_data)
+void	init_map_data(t_map_data *map_data)
 {
 	map_data->x = 0;
 	map_data->y = 0;
@@ -23,10 +23,10 @@ void init_map_data(t_map_data *map_data)
 	map_data->player = 0;
 }
 
-void set_map_data(t_map_data *map_data, char **map)
+void	set_map_data(t_map_data *map_data, char **map)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	map_data->x = ft_strlen(map[0]);
@@ -52,10 +52,10 @@ void set_map_data(t_map_data *map_data, char **map)
 	map_data->y = i;
 }
 
-void init_pos_player(char **map, t_coord *player)
+void	init_pos_player(char **map, t_coord *player)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (map[i])
@@ -67,7 +67,7 @@ void init_pos_player(char **map, t_coord *player)
 			{
 				player->x = j;
 				player->y = i;
-				return;
+				return ;
 			}
 			j++;
 		}
@@ -75,10 +75,10 @@ void init_pos_player(char **map, t_coord *player)
 	}
 }
 
-void init_pos_exit(char **map, t_coord *exit)
+void	init_pos_exit(char **map, t_coord *exit)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (map[i])
@@ -90,7 +90,7 @@ void init_pos_exit(char **map, t_coord *exit)
 			{
 				exit->x = j;
 				exit->y = i;
-				return;
+				return ;
 			}
 			j++;
 		}
@@ -98,12 +98,12 @@ void init_pos_exit(char **map, t_coord *exit)
 	}
 }
 
-void find_way(char **map, t_map_data *map_data, int player_x, int player_y)
+void	find_way(char **map, t_map_data *map_data, int player_x, int player_y)
 {
 	if (map[player_y][player_x] == MAP_W)
-		return;
+		return ;
 	if (map[player_y][player_x] == MAP_F)
-		return;
+		return ;
 	if (map[player_y][player_x] == MAP_C)
 		map_data->item--;
 	if (map[player_y][player_x] == MAP_E)

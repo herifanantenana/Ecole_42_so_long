@@ -6,11 +6,17 @@
 /*   By: arakotom <arakotom@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 12:36:43 by arakotom          #+#    #+#             */
-/*   Updated: 2024/08/02 13:39:46 by arakotom         ###   ########.fr       */
+/*   Updated: 2024/08/02 14:56:15 by arakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
+
+void	set_coord_x_y(t_coord *coord, int c_x, int c_y)
+{
+	coord->x = c_x;
+	coord->y = c_y;
+}
 
 void	draw_collect(t_game *game, void *collect, t_coord c_map)
 {

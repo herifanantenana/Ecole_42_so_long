@@ -6,7 +6,7 @@
 /*   By: arakotom <arakotom@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 22:39:52 by arakotom          #+#    #+#             */
-/*   Updated: 2024/08/02 13:54:17 by arakotom         ###   ########.fr       */
+/*   Updated: 2024/08/02 14:28:53 by arakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ typedef struct s_game
 	int				win_w;
 	int				win_h;
 	int				ratio;
+	int				move;
 	t_map			map;
 	t_assets		assets;
 	t_direction		player_direction;

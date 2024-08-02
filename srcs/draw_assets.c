@@ -6,7 +6,7 @@
 /*   By: arakotom <arakotom@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 13:35:09 by arakotom          #+#    #+#             */
-/*   Updated: 2024/08/02 13:39:23 by arakotom         ###   ########.fr       */
+/*   Updated: 2024/08/02 16:42:51 by arakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	draw_exit(t_game *game, t_exit_img exit, t_coord c_map)
 	if (game->map.map_data.item == 0)
 		put_img_mlx(game, exit.open, c_map);
 	else
-		put_img_mlx(game, exit.close, c_map);
+		put_img_mlx(game, game->assets.ground, c_map);
 }
 
 void	draw_player(t_game *game, t_player_img player, t_direction dir,
@@ -52,6 +52,7 @@ void	draw_player(t_game *game, t_player_img player, t_direction dir,
 	else if (dir == RIGHT)
 		put_img_mlx(game, player.right, c_map);
 }
+
 void	draw_player_on_exit(t_game *game, t_player_img player, t_direction dir,
 		t_coord c_map)
 {
