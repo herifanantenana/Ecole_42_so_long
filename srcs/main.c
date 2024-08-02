@@ -6,7 +6,7 @@
 /*   By: arakotom <arakotom@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 15:49:14 by arakotom          #+#    #+#             */
-/*   Updated: 2024/08/02 16:52:35 by arakotom         ###   ########.fr       */
+/*   Updated: 2024/08/03 02:39:54 by arakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(int argc, char const *argv[])
 	t_game	game;
 
 	if (argc != 2)
-		prog_error_exit(ERR_TOO_FEW_ARGS);
+		prog_error_exit(ERR_ARGS);
 	check_map_file(argv[1]);
 	check_map_validation(argv[1]);
 	game = game_init(read_map_file(argv[1]));
