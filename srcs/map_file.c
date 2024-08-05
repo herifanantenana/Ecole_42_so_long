@@ -6,7 +6,7 @@
 /*   By: arakotom <arakotom@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 23:11:05 by arakotom          #+#    #+#             */
-/*   Updated: 2024/08/02 16:15:49 by arakotom         ###   ########.fr       */
+/*   Updated: 2024/08/05 15:16:24 by arakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ void	check_map_file(const char *path)
 	path_len = ft_strlen(path);
 	ext_len = ft_strlen(EXT_MAP_FILE_NAME);
 	if (path_len <= ext_len)
+		map_file_error_exit(ERR_INVALID_FILE_NAME);
+	if (path[path_len - ext_len - 1] == '/')
 		map_file_error_exit(ERR_INVALID_FILE_NAME);
 	if (ft_strncmp(&path[path_len - ext_len], EXT_MAP_FILE_NAME, ext_len) != 0)
 		map_file_error_exit(ERR_FILE_EXT);
