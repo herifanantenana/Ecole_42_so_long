@@ -6,7 +6,7 @@
 #    By: arakotom <arakotom@student.42antananari    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/26 00:43:26 by arakotom          #+#    #+#              #
-#    Updated: 2024/07/28 22:19:39 by arakotom         ###   ########.fr        #
+#    Updated: 2024/08/05 16:58:22 by arakotom         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,11 +18,25 @@ HEADER_DIR = includes
 LIBFT_DIR = libft
 FT_PRINTF_DIR = ft_printf
 GET_NEXT_LINE_DIR = get_next_line
+MINILIBX_DIR = minilibx-linux
 
 MINILIBX_FLAGS = -Lminilibx-linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
 
-SRCS = $(wildcard $(SRC_DIR)/*.c) $(wildcard $(SRC_DIR)/*/*.c)
-OBJS = $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRCS))
+SRCS = assets_init.c \
+	assets_utils.c \
+	draw_assets.c \
+	draw_game_map.c \
+	error_handler.c \
+	game_handler.c \
+	game_init.c \
+	key_handler.c \
+	main.c \
+	map_file.c \
+	map_utils.c \
+	map_validation.c \
+	move_utils.c \
+	move.c
+OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
 LIB = $(LIBFT_DIR)/libft.a \
 	$(FT_PRINTF_DIR)/libftprintf.a \
 	$(GET_NEXT_LINE_DIR)/get_next_line.a
@@ -50,6 +64,7 @@ clean :
 	@make clean -C $(LIBFT_DIR)
 	@make clean -C $(FT_PRINTF_DIR)
 	@make clean -C $(GET_NEXT_LINE_DIR)
+	@make clean -C $(MINILIBX_DIR)
 	$(RM) $(OBJ_DIR)
 
 fclean : clean

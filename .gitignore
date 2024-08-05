@@ -9,6 +9,5 @@
 *.pdf
 .vscode
 so_long
-maps
 objs
 minilibx-linux/
