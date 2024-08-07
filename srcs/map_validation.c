@@ -6,7 +6,7 @@
 /*   By: arakotom <arakotom@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 23:08:44 by arakotom          #+#    #+#             */
-/*   Updated: 2024/08/02 16:12:50 by arakotom         ###   ########.fr       */
+/*   Updated: 2024/08/08 00:15:35 by arakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ static t_bool	is_map_solvable(char **map, t_map_data *map_content,
 	*id_err = 4;
 	init_pos_player(map, &player);
 	find_way(map, map_content, player.x, player.y);
-	if (map_content->item != 0 && map_content->exit != 0)
+	if (map_content->item != 0 || map_content->exit != 0)
 		return (FALSE);
 	return (TRUE);
 }
