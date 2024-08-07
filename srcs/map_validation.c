@@ -6,7 +6,7 @@
 /*   By: arakotom <arakotom@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 23:08:44 by arakotom          #+#    #+#             */
-/*   Updated: 2024/08/08 00:15:35 by arakotom         ###   ########.fr       */
+/*   Updated: 2024/08/08 00:37:28 by arakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,16 @@ static t_bool	is_map_rectangular(char **map, int *id_err)
 
 static t_bool	is_map_content_valid(t_map_data map_content, int *id_err)
 {
-	*id_err = 2;
+	if (map_content.player != 1 || map_content.exit != 1)
+	{
+		*id_err = 2;
+		return (FALSE);
+	}
+	*id_err = 3;
 	if ((map_content.x * map_content.y) != (map_content.empty + map_content.wall
 			+ map_content.item + map_content.exit + map_content.player))
 		return (FALSE);
 	if (map_content.x < 3 || map_content.y < 3)
-		return (FALSE);
-	if (map_content.player != 1 || map_content.exit != 1)
 		return (FALSE);
 	return (TRUE);
 }
@@ -52,7 +55,7 @@ static t_bool	is_map_surrounded_by_walls(char **map, t_map_data map_content,
 	int	i;
 	int	j;
 
-	*id_err = 3;
+	*id_err = 4;
 	i = 0;
 	while (map[i])
 	{
@@ -77,7 +80,7 @@ static t_bool	is_map_solvable(char **map, t_map_data *map_content,
 {
 	t_coord	player;
 
-	*id_err = 4;
+	*id_err = 5;
 	init_pos_player(map, &player);
 	find_way(map, map_content, player.x, player.y);
 	if (map_content->item != 0 || map_content->exit != 0)
